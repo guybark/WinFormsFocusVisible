@@ -5,7 +5,10 @@ using System.Windows.Forms;
 
 // This demo app shows different approaches to rendering keyboard focus visuals
 // in a WinForms app. By default, standard controls would be used in the app, 
-// which would mean that such custom rendering actions is not required.
+// which would mean that such custom rendering actions are not required.
+
+// Seriously - by default use standard controls. WinForms provides a great deal
+// of support for accessibility by default when using standard controls. 
 
 namespace WinFormsFocusVisible
 {
