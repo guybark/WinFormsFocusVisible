@@ -92,7 +92,7 @@ namespace WinFormsFocusVisible
             // color from the active theme. Alternatively, as shown here,
             // the two contrasting color could be used in a dashed pattern.
 
-            this.focusPenForeground = new Pen(SystemColors.ControlText);
+            this.focusPenForeground = new Pen(SystemColors.ControlText, 2);
             this.focusPenForeground.DashPattern = new float[] { 1, 1 };
 
             this.focusPenBackground = new Pen(SystemColors.Control);
@@ -123,10 +123,12 @@ namespace WinFormsFocusVisible
             // required.
             if (this.myCustomControlHasFocus)
             {
-                // Render the feedback a little in from the egde of the button.
+                // Render the feedback a little in from the edge of the button.
+                // Note that attempting to draw outside the button will require 
+                // more work that rendering to only e.Graphics.
                 Rectangle rectFocus = new Rectangle(
                     0, 0, this.Width - 1, this.Height - 1);
-                rectFocus.Inflate(-2, -2);
+                rectFocus.Inflate(-1, -1);
 
                 // Draw the focus visuals on the control.
                 e.Graphics.DrawRectangle(this.focusPenBackground, rectFocus);
