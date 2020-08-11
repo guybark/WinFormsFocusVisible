@@ -32,6 +32,7 @@
             this.buttonCustom = new WinFormsFocusVisible.MyButton();
             this.myUserControl = new WinFormsFocusVisible.MyUserControl();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.buttonShowMoreControls = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonStandard
@@ -39,7 +40,6 @@
             this.buttonStandard.Location = new System.Drawing.Point(37, 80);
             this.buttonStandard.Name = "buttonStandard";
             this.buttonStandard.Size = new System.Drawing.Size(149, 77);
-            this.buttonStandard.TabIndex = 0;
             this.buttonStandard.Text = "&Standard";
             this.buttonStandard.UseVisualStyleBackColor = true;
             // 
@@ -48,7 +48,6 @@
             this.buttonCustom.Location = new System.Drawing.Point(226, 80);
             this.buttonCustom.Name = "buttonCustom";
             this.buttonCustom.Size = new System.Drawing.Size(149, 77);
-            this.buttonCustom.TabIndex = 1;
             this.buttonCustom.Text = "&Custom";
             this.buttonCustom.UseVisualStyleBackColor = true;
             // 
@@ -57,27 +56,35 @@
             this.myUserControl.Location = new System.Drawing.Point(415, 80);
             this.myUserControl.Name = "myUserControl";
             this.myUserControl.Size = new System.Drawing.Size(149, 77);
-            this.myUserControl.TabIndex = 2;
             // 
             // buttonClose
             // 
             this.buttonClose.Location = new System.Drawing.Point(633, 367);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(155, 71);
-            this.buttonClose.TabIndex = 3;
             this.buttonClose.Text = "&Close";
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            // 
+            // buttonShowMoreControls
+            // 
+            this.buttonShowMoreControls.Location = new System.Drawing.Point(37, 353);
+            this.buttonShowMoreControls.Name = "buttonShowMoreControls";
+            this.buttonShowMoreControls.Size = new System.Drawing.Size(298, 85);
+            this.buttonShowMoreControls.Text = "Show &More Controls";
+            this.buttonShowMoreControls.UseVisualStyleBackColor = true;
+            this.buttonShowMoreControls.Click += new System.EventHandler(this.buttonShowMoreControls_Click);
             // 
             // FormFocusVisible
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonClose);
-            this.Controls.Add(this.myUserControl);
-            this.Controls.Add(this.buttonCustom);
             this.Controls.Add(this.buttonStandard);
+            this.Controls.Add(this.buttonCustom);
+            this.Controls.Add(this.myUserControl);
+            this.Controls.Add(this.buttonShowMoreControls);
+            this.Controls.Add(this.buttonClose);
             this.MaximizeBox = false;
             this.Name = "FormFocusVisible";
             this.Text = "Keyboard focus visuals demo";
@@ -91,6 +98,7 @@
         private MyButton buttonCustom;
         private MyUserControl myUserControl;
         private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.Button buttonShowMoreControls;
     }
 }
 

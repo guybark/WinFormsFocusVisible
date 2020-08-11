@@ -23,6 +23,12 @@ namespace WinFormsFocusVisible
         {
             this.Close();
         }
+
+        private void buttonShowMoreControls_Click(object sender, EventArgs e)
+        {
+            var controlsForm = new ControlMixForm();
+            controlsForm.ShowDialog(this);
+        }
     }
 
     // This button demonstrates the use of DrawFocusRectangle() 
@@ -67,7 +73,7 @@ namespace WinFormsFocusVisible
         {
             // Create pens for the focus visuals which will be guaranteed to
             // have strong contrast against the background of the control,
-            // regardess of the active theme.
+            // regardless of the active theme.
             CreateKeyboardFocusVisualsPens();
 
             // Set up an event handler to be notified when the active theme 
