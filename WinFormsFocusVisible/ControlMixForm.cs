@@ -6,7 +6,8 @@ namespace WinFormsFocusVisible
 {
     public partial class ControlMixForm : Form
     {
-        private Pen focusPen;
+        private Pen focusPen1;
+        private Pen focusPen2;
 
         public ControlMixForm()
         {
@@ -17,8 +18,18 @@ namespace WinFormsFocusVisible
 
         private void CreateKeyboardFocusVisualsPens()
         {
-            // The pen is two pixels thick.
-            this.focusPen = new Pen(SystemColors.ControlText, 2);
+            // Create pens for a 2-pixel wide dashed focused border, with 
+            // alternating colors made up of the foreground and background 
+            // for controls. Use system colors to account for a high contrast 
+            // theme being active.
+
+            float[] dashValues = { 2, 2 };
+            this.focusPen1 = new Pen(SystemColors.ControlText, 2);
+            this.focusPen1.DashPattern = dashValues;
+
+            this.focusPen2 = new Pen(SystemColors.Control, 2);
+            this.focusPen2.DashPattern = dashValues;
+            this.focusPen2.DashOffset = 2;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -63,7 +74,8 @@ namespace WinFormsFocusVisible
         {
             if (control.Focused)
             {
-                e.Graphics.DrawRectangle(this.focusPen, offsetRect);
+                e.Graphics.DrawRectangle(this.focusPen1, offsetRect);
+                e.Graphics.DrawRectangle(this.focusPen2, offsetRect);
             }
         }
     }
